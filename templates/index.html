@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Product Matcher</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="min-h-screen font-sans">
+
+  <!-- Main Background Container -->
+<div id="backgroundContainer" class="relative flex justify-end items-center h-screen w-full px-20">
+
+   
+    <!-- Left Side - Title -->
+<div class="w-1/2 text-white font-bold font-[Helvetica] absolute top-7 left-7 leading-snug animated-text-container">
+  <h1 class="tracking-wide text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px]">
+    <span>VISUAL</span><br>
+    <span>PRODUCT</span><br>
+    <span>MATCHER</span>
+  </h1>
+</div>
+
+
+    <!-- Right Side - Upload Interface -->
+    <div class="w-1/2 flex justify-end items-center fade-in-delay">
+  <div class="bg-black bg-opacity-45 backdrop-blur-md rounded-3xl p-8 w-full max-w-md shadow-xl border border-white border-opacity-20 flex flex-col justify-center h-[60vh] sm:h-[90vh]">
+    
+    <h3 class="text-white text-xl font-semibold mb-6 text-center">Upload Your Image</h3>
+
+    <div class="file-input-wrapper mb-4">
+      <input type="file" id="imageUpload" accept="image/*">
+      <button class="upload-btn bg-white hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg w-full font-semibold">Choose File</button>
+    </div>
+
+    <p class="text-white text-center my-4 font-semibold">Or</p>
+
+    <input type="url" id="urlInput" placeholder="enter image URL..." class="px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white w-full mb-4">
+
+    <button id="goButton" class="bg-orange-600 hover:bg-orange-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 w-full">GO</button>
+    
+  </div>
+</div>
+
+  </div>
+
+<!-- Overlay -->
+<div id="overlay" class="hidden fixed inset-0 bg-white flex flex-col items-center justify-start pt-10 z-50 overflow-auto">
+  <!-- Back Button -->
+  <button id="overlayBack" class="bg-orange-600 text-white px-4 py-2 rounded-lg mb-4">Back</button>
+
+  <!-- Filter Section -->
+  <div id="overlayFilter" class="flex gap-4 mb-6">
+    <label for="filterCategory" class="text-gray-700 font-semibold">Category:</label>
+    <select id="filterCategory" class="border rounded px-2 py-1">
+      <option value="">All</option>
+      <option value="boots">Boots</option>
+      <option value="heels">Heels</option>
+      <option value="flats">Flats</option>
+      <option value="sneakers">Sneakers</option>
+    </select>
+
+    <label for="filterScore" class="text-gray-700 font-semibold">Score:</label>
+    <select id="filterScore" class="border rounded px-2 py-1">
+      <option value="">All</option>
+      <option value="0.5">>= 50%</option>
+      <option value="0.6">>= 60%</option>
+      <option value="0.7">>= 70%</option>
+      <option value="0.8">>= 80%</option>
+      <option value="0.9">>= 90%</option>
+    </select>
+    <button id="applyFilters">Apply</button>
+  </div>
+
+  <div id="overlayResults" class="w-11/12 max-w-6xl flex flex-col gap-6"></div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
