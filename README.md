@@ -2,7 +2,7 @@
 
 A web application for visually matching products using MobileNetV2 embeddings and cosine similarity.
 
-# Features
+## Features
 
 - Upload an image and find visually similar products from a dataset
 - Uses pretrained MobileNetV2 for feature extraction
@@ -10,7 +10,7 @@ A web application for visually matching products using MobileNetV2 embeddings an
 - Flask backend with REST API
 - Responsive frontend with image preview and matching results and filtering
 
-# Project Structure
+## Project Structure
 
 - `app.py`: Flask backend API and server logic
 - `extract_features.py`: Script for extracting and saving dataset features
@@ -19,7 +19,7 @@ A web application for visually matching products using MobileNetV2 embeddings an
 - `static/`: Frontend assets including JavaScript, CSS, images, and dataset
 - `templates/`: HTML templates
 
-# Installation and Running Locally
+## Installation and Running Locally
 
 1. Clone the repo and move into directory:
 git clone https://github.com/yourusername/visual-product-matcher.git
@@ -33,7 +33,7 @@ python app.py
 
 4. Open `http://localhost:8080` in your browser to use the app.
 
-# Docker Usage
+## Docker Usage
 
 Build and run the container locally:
 docker build -t visual-product-matcher .
